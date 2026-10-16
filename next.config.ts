@@ -8,6 +8,7 @@ if (path.resolve(process.cwd()) !== realRoot) {
 }
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   turbopack: {
     root: realRoot,
     rules: {
