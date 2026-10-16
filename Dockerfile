@@ -10,9 +10,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Dokploy: mark NEXT_PUBLIC_API_URL as a build variable. It is baked into the client.
-ARG NEXT_PUBLIC_API_URL
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=https://alderhost-backend-qcbe6m-c9825a-169-58-206-96.sslip.io
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
